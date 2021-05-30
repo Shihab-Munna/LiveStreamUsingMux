@@ -1,0 +1,25 @@
+{
+  "name": "ajke_mux_test",
+  "version": "0.0.1",
+  "description": "A simple live streaming video app, powered by Mux.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@mux/mux-node": "^2.0.0",
+    "basic-auth": "^2.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.16.3",
+    "socket.io": "^2.2.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
