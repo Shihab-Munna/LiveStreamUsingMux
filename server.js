@@ -27,8 +27,9 @@ let STREAM;
 // Storage Configuration
 const util = require("util");
 const fs = require("fs");
+console.log(__dirname);
 // const stateFilePath = "./.data/stream";
-const stateFilePath = path.dirname("/data/stream");
+const stateFilePath = path.dirname(__dirname + ".data/stream");
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
@@ -112,6 +113,7 @@ app.get("/stream", async (req, res) => {
 // API which Returns the 5 most recent VOD assets made from our Live Stream
 app.get("/recent", async (req, res) => {
   const recentAssetIds = STREAM["recent_asset_ids"] || [];
+  // console.log("🚀 ~ file: server.js ~ line 116 ~ app.get ~ recentAssetIds", recentAssetIds)
 
   // For each VOD asset we know about, get the details from Mux Video
   const assets = await Promise.all(
